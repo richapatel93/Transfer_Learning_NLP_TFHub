@@ -10,7 +10,7 @@ The goal of this project is to leverage **transfer learning** in natural languag
 This project implements a full NLP pipeline using TensorFlow and TensorFlow Hub to classify questions as sincere (0) or insincere (1). The Quora dataset, with over 1.3 million questions, is heavily imbalanced—most questions are sincere, making insincere detection challenging. I trained three models with pre-trained embeddings, compared their performance, fine-tuned the best one, and visualized results with Matplotlib and TensorBoard, demonstrating a robust approach to binary text classification.
 
 ### Key Achievements
-- Achieved a peak validation accuracy of **95.94%** (transfer learning) and pushed it to **~96%** with fine-tuning.
+- Achieved a peak validation accuracy of **95.94%** using transfer learning with `universal-sentence-encoder-large/5`.
 - Successfully trained and compared three models using embeddings of varying complexity.
 - Overcame runtime instability and data imbalance challenges in Google Colab.
 - Produced publication-quality visualizations for model comparison and training insights.
@@ -24,7 +24,7 @@ This project implements a full NLP pipeline using TensorFlow and TensorFlow Hub 
    - **Model_2**: `universal-sentence-encoder/4` (512-dim, balanced).
    - **Model_3**: `universal-sentence-encoder-large/5` (512-dim, high-capacity).
 5. **Model Comparison**: Evaluated models over 5 epochs, achieving validation accuracies of 93.80%, 94.87%, and 95.94%.
-6. **Fine-Tuning**: Fine-tuned Model_3 with a low learning rate (1e-5), improving accuracy to ~96% over 3 epochs.
+6. **Fine-Tuning**: Fine-tuned Model_3 with a low learning rate (1e-5) over 3 epochs, reaching a validation accuracy of 93.80%—a slight dip from transfer learning, suggesting the pre-trained embedding was already optimal for this task.
 7. **Visualization**: 
    - Plotted accuracy and loss curves for all models using Matplotlib (Task 8).
    - Implemented TensorBoard for interactive visualization of fine-tuned Model_3 (Task 10).
@@ -56,14 +56,16 @@ This project implements a full NLP pipeline using TensorFlow and TensorFlow Hub 
    - Clearing memory with `tf.keras.backend.clear_session()` between models.
    - Leveraging GPU acceleration for faster computation.
 3. **TensorFlow Hub Integration**: Initial `KerasTensor` errors with `hub.KerasLayer` required a custom `HubLayer` wrapper to ensure compatibility with Sequential API.
-4. **Fine-Tuning Balance**: Prevented overfitting during fine-tuning by using a low learning rate (1e-5) and monitoring validation metrics closely.
-5. **Resource Constraints**: Managed Colab’s free-tier limits (12 GB RAM, variable GPU) to train complex models successfully.
+4. **Fine-Tuning Balance**: Fine-tuning Model_3 resulted in a validation accuracy drop (95.94% → 93.80%), highlighting the need for further hyperparameter tuning or data balancing to unlock gains.
 
 ## Results
 - **Model_1 (NNLM)**: Final Val Accuracy: 93.80% (lightweight baseline).
 - **Model_2 (USE)**: Final Val Accuracy: 94.87% (balanced performance).
 - **Model_3 (USE-Large)**: Final Val Accuracy: 95.94% (best transfer learning result).
-- **Fine-Tuned Model_3**: Final Val Accuracy: ~96% (improved via fine-tuning).
+- **Fine-Tuned Model_3**: Final Val Accuracy: 93.80% (fine-tuning outcome, analyzed below).
+
+### Fine-Tuning Analysis
+Fine-tuning Model_3 with `trainable=True` and a learning rate of 1e-5 over 3 epochs yielded a validation accuracy of 93.80%, lower than the transfer learning result (95.94%). Loss also increased (0.1026 → 0.5738), suggesting the pre-trained embedding was already well-aligned with the task, and fine-tuning may have over-adjusted it. This insight underscores the importance of careful hyperparameter tuning and data balancing in fine-tuning workflows.
 
 ### Screenshots
 - **Task 7 Output**: Model accuracies  
@@ -85,10 +87,13 @@ This project implements a full NLP pipeline using TensorFlow and TensorFlow Hub 
 5. Launch TensorBoard in Colab to explore interactive metrics.
 
 ## Future Improvements
-- **Advanced Sampling Techniques**: Explore methods like **SMOTE** (Synthetic Minority Oversampling Technique) or **oversampling** the minority class (insincere questions) in the target dataset to further address imbalance and potentially boost model performance.
+- **Advanced Sampling Techniques**: Explore methods like **SMOTE** (Synthetic Minority Oversampling Technique) or **oversampling** the minority class (insincere questions) in the target dataset to address imbalance and potentially enhance fine-tuning performance.
 - Experiment with additional embeddings (e.g., BERT) for higher accuracy.
 - Implement cross-validation for more robust evaluation.
 - Add custom metrics (e.g., F1-score) to better evaluate performance on imbalanced data.
-- Optimize hyperparameters (e.g., dropout rate, dense layer size) with grid search.
+- Optimize fine-tuning hyperparameters (e.g., learning rate, epochs) with grid search to improve results.
 
+
+
+---
 
