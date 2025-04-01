@@ -1,5 +1,5 @@
 # Transfer Learning for NLP with TensorFlow Hub
-(ttps://github.com/richapatel93/Transfer_Learning_NLP_TFHub/blob/main/tensorflow.png)
+(https://github.com/richapatel93/Transfer_Learning_NLP_TFHub/blob/main/tensorflow.png)
 !  
 
 
