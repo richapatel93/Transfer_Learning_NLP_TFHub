@@ -1,7 +1,7 @@
 # Transfer Learning for NLP with TensorFlow Hub
-https://github.com/richapatel93/Transfer_Learning_NLP_TFHub/blob/main/tensorflow.png
+(ttps://github.com/richapatel93/Transfer_Learning_NLP_TFHub/blob/main/tensorflow.png)
 !  
-*Banner placeholder—replace with a screenshot of your TensorBoard or Task 8 plots for visual impact!*
+
 
 ## Project Goal
 The goal of this project is to leverage **transfer learning** in natural language processing (NLP) to classify insincere questions from the Quora Insincere Questions dataset. By utilizing pre-trained embeddings from TensorFlow Hub, I aimed to build, compare, fine-tune, and visualize multiple text classification models, achieving high accuracy while addressing real-world challenges like data imbalance. This project showcases my ability to handle complex NLP tasks, optimize model performance, and present results professionally—skills essential for data science and AI roles.
