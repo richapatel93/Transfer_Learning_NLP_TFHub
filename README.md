@@ -1,6 +1,6 @@
 # Transfer Learning for NLP with TensorFlow Hub
-
-![Project Banner](https://via.placeholder.com/800x200.png?text=Transfer+Learning+for+NLP)  
+https://github.com/richapatel93/Transfer_Learning_NLP_TFHub/blob/main/tensorflow.png
+!  
 *Banner placeholder—replace with a screenshot of your TensorBoard or Task 8 plots for visual impact!*
 
 ## Project Goal
@@ -69,13 +69,13 @@ Fine-tuning Model_3 with `trainable=True` and a learning rate of 1e-5 over 3 epo
 
 ### Screenshots
 - **Task 7 Output**: Model accuracies  
-  ![Task 7 Output](screenshots/task7_output.png)
+  ![Task 7 Output](screenshots/https://github.com/richapatel93/Transfer_Learning_NLP_TFHub/blob/main/Accuracy%20and%20loss%20curves.png
 - **Task 8 Plots**: Accuracy and loss curves  
-  ![Task 8 Plots](screenshots/task8_plots.png)
+  ![Task 8 Plots](screenshots/task8_plots.png
 - **Task 9 Fine-Tuning**: Fine-tuned Model_3 results  
   ![Task 9 Output](screenshots/task9_output.png)
 - **Task 10 TensorBoard**: Interactive visualizations  
-  ![TensorBoard Scalars](screenshots/task10_tensorboard.png)
+   https://github.com/richapatel93/Transfer_Learning_NLP_TFHub/blob/main/tensorflow.png
 
 *Replace `screenshots/*.png` with paths to your actual screenshots once uploaded to GitHub.*
 
